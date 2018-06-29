@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 110
+        versionName '1.1.0'
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
+    }
+    //保证所有的buildType对app项目可见
+    publishNonDefault true
+
+    buildTypes {
+        debug {
+            buildConfigField "int", "ENV", "1"
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+        qa {
+            buildConfigField "int", "ENV", "1"
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+        dev {
+            buildConfigField "int", "ENV", "2"
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+        online {
+            buildConfigField "int", "ENV", "0"
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+        release {
+            buildConfigField "int", "ENV", "0"
+            buildConfigField "boolean", "IS_DEBUG", "false"
+        }
+    }
+
+    // 保证其他的lib没有被preDex
+    dexOptions {
+        preDexLibraries = false
+    }
+    buildToolsVersion '26.0.2'
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'src/main/jniLibs')
+    compile rootProject.ext.libSupRecyclerView
+    compile rootProject.ext.libSupDesign
+    /*imageloader*/
+    compile rootProject.ext.libGlide
+    compile rootProject.ext.libGlideIntegration
+    /*rx*/
+    compile rootProject.ext.libRxAndroid
+    compile rootProject.ext.libRxJava
+    /*rotrofit*/
+    compile rootProject.ext.libRetrofit
+    compile rootProject.ext.libRetrofitRxAdapter
+    compile rootProject.ext.libOkHttpLog
+    /*json*/
+    compile rootProject.ext.libJacksonAnno
+    compile rootProject.ext.libJacksonCore
+    compile rootProject.ext.libJacksonDataBind
+    /*multidex*/
+    compile rootProject.ext.libMultidex
+    /*log*/
+    compile rootProject.ext.libXLog
+    /*memory*/
+    debugCompile rootProject.ext.debugDependencies.leakCanary
+    qaCompile rootProject.ext.devDependencies.leakCanary
+    devCompile rootProject.ext.qaDependencies.leakCanary
+    onlineCompile rootProject.ext.onlineDependencies.leakCanary
+    releaseCompile rootProject.ext.releaseDependencies.leakCanary
+    /*deeplink*/
+    compile rootProject.ext.libDeeplink
+    /*router*/
+    compile rootProject.ext.libRouter
+    annotationProcessor rootProject.ext.libRouterCompiler
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/new_filters_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="9dp">
+
+        <RelativeLayout
+            android:id="@+id/filter_1_wrapper"
+            style="@style/filter_wrapper_style"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/filter_1"
+                style="@style/filter_textView_defaultStyle"
+                tools:text="区域" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/filter_2_wrapper"
+            style="@style/filter_wrapper_style"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/filter_2"
+                style="@style/filter_textView_defaultStyle"
+                tools:text="价格" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/filter_3_wrapper"
+            style="@style/filter_wrapper_style"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/filter_3"
+                style="@style/filter_textView_defaultStyle"
+                tools:text="更多" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/filter_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/standard_line_light"
+        tools:visibility="visible" />
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/subscribe_back"
+            android:layout_width="18dp"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:padding="4dp"
+            android:src="@drawable/ico_arrow_left_blue" />
+
+        <TextView
+            style="@style/activity_title"
+            android:layout_centerInParent="true"
+            android:text="订阅" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/standard_line_light" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/img_center"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp"
+        android:src="@drawable/subscribe_center" />
+
+    <TextView
+        android:id="@+id/text_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="暂无更多订阅，敬请期待～"
+        android:textColor="@color/standard_text_light_gray"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/back_center"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/text_center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_bg_round_blue"
+        android:gravity="center"
+        android:text="返回"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

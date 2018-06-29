@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:paddingLeft="@dimen/standard_layout_margin_horizontal"
+    android:paddingRight="@dimen/standard_layout_margin_horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/kpi_history_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/standard_text_light_black"
+            android:textSize="16sp"
+            tools:text="中文测试" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="8dp" />
+
+        <TextView
+            android:id="@+id/kpi_history_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="@color/standard_text_gray"
+            android:textSize="12sp"
+            tools:text="目标：234 完成：234" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/kpi_history_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textColor="@color/standard_text_light_black"
+        android:textSize="14sp"
+        tools:text="完成率：100%" />
+
+</RelativeLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <ImageView
+            android:id="@+id/project_back"
+            android:layout_width="20dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:src="@drawable/ico_arrow_left_blue" />
+
+        <TextView
+            android:id="@+id/project_title"
+            style="@style/activity_title"
+            tools:text="楼盘详情"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/standard_line_light" />
+    </RelativeLayout>
+
+    <com.sohu.focus.salesmaster.uiframe.PagerSlidingTabStrip
+        android:id="@+id/project_tabs"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        app:pstsTabMarginLeft="18dp"
+        app:pstsTabPaddingLeftRight="0dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/standard_line" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/project_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".me.view.MeActivity" />
+
+</LinearLayout>

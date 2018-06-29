@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:drawableLeft="@drawable/ic_latest_state"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:text="最新状态"
+            android:textColor="@color/standard_text_light_black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="10dp"
+            android:background="#EEEEEE" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="3dp"
+                android:padding="8dp"
+                android:text="昨日PV:"
+                android:textColor="@color/standard_text_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/project_pv"
+                android:padding="8dp"
+                android:textColor="@color/standard_text_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_marginLeft="60dp"
+                android:padding="8dp"
+                android:text="昨日UV:"
+                android:textColor="@color/standard_text_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/project_uv"
+                android:padding="8dp"
+                android:textColor="@color/standard_text_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="3dp"
+                android:padding="8dp"
+                android:text="昨日400:"
+                android:textColor="@color/standard_text_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/project_400"
+                android:padding="8dp"
+                android:textColor="@color/standard_text_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_marginLeft="60dp"
+                android:padding="8dp"
+                android:text="400接通率:"
+                android:textColor="@color/standard_text_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/project_400_rate"
+                android:padding="8dp"
+                android:textColor="@color/standard_text_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="3dp"
+                android:padding="8dp"
+                android:text="活跃经纪人:"
+                android:textColor="@color/standard_text_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/project_brokers"
+                android:padding="8dp"
+                android:textColor="@color/standard_text_black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_marginLeft="60dp"
+                android:padding="8dp"
+                android:text="新开直播间"
+                android:textColor="@color/standard_text_gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/project_new_lives"
+                android:padding="8dp"
+                android:textColor="@color/standard_text_black"
+                android:textSize="14sp" />
+        </GridLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/standard_line_light" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="@color/standard_background_f5" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/standard_line_light" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/ic_latest_data"
+            android:drawablePadding="8dp"
+            android:padding="16dp"
+            android:text="近7日数据"
+            android:textColor="@color/standard_text_light_black"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/standard_line_light" />
+
+        <com.sohu.focus.salesmaster.uiframe.easyrecyclerview.EasyRecyclerView
+            android:id="@+id/project_chart_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:scrollbars="none" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/standard_line_light" />
+
+        <com.sohu.focus.salesmaster.uiframe.LineChart
+            android:id="@+id/project_chart"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:text="点击或长按查看具体数据"
+            android:textColor="@color/standard_text_light_gray"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+</ScrollView>

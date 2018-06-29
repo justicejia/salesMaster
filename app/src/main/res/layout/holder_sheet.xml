@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="113dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:background="@drawable/card_bg"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp">
+
+
+    <TextView
+        android:id="@+id/sheet_item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/standard_text_light_black"
+        android:textSize="17sp"
+        tools:text="@sample/names" />
+
+    <TextView
+        android:id="@+id/sheet_item_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="22dp"
+        android:textColor="#BBBBBB"
+        android:textSize="12sp"
+        tools:text="@sample/names" />
+
+    <TextView
+        android:id="@+id/sheet_item_mid_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sheet_item_title"
+        android:layout_marginTop="17dp"
+        android:textColor="@color/standard_text_gray"
+        android:textSize="13sp"
+        tools:text="@sample/names" />
+
+    <TextView
+        android:id="@+id/sheet_item_bottom_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sheet_item_mid_title"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/standard_text_gray"
+        android:textSize="13sp"
+        tools:text="@sample/names" />
+
+    <TextView
+        android:id="@+id/sheet_item_bottom_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="12dp"
+        android:textColor="@color/standard_text_light_black"
+        android:textSize="30sp"
+        tools:text="@sample/names" />
+
+
+</RelativeLayout>

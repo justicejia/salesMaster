@@ -1,0 +1,266 @@
+apply plugin: 'com.android.application'
+
+ext.versionMajor = 1
+ext.versionMinor = 6
+ext.versionPatch = 0
+def showRealVersionName = rootProject.ext.showRealVersionName
+
+ext.revisionNumberCMD = 'git rev-list HEAD --count'
+ext.revisionNumber = revisionNumberCMD.execute().getText().trim().toInteger()
+ext.revisionDescriptionCMD = 'git describe --always'
+ext.tempRevisionDescription = revisionDescriptionCMD.execute().getText().trim()
+ext.revisionDescription = (tempRevisionDescription == null || (tempRevisionDescription).size() == 0) ? new Date().format("yyMMdd") : (tempRevisionDescription).substring((tempRevisionDescription).size() - 7)
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode getVersionCode(showRealVersionName)
+        versionName getVersionName(showRealVersionName)
+        renderscriptTargetApi 14
+        renderscriptSupportModeEnabled true
+        multiDexEnabled true
+        flavorDimensions "versionCode"
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+
+    signingConfigs {
+        realase {
+            keyAlias 'focus'
+            keyPassword 'Welcome2sohu!'
+            storeFile file('focus_key.key')
+            storePassword 'Welcome2sohu!'
+            v2SigningEnabled true
+            v1SigningEnabled true
+        }
+        debug {
+            keyAlias 'focus'
+            keyPassword 'Welcome2sohu!'
+            storeFile file('focus_key.key')
+            storePassword 'Welcome2sohu!'
+            v2SigningEnabled true
+            v1SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "int", "ENV", "1"
+            buildConfigField "boolean", "IS_DEBUG", "true"
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+            renderscriptDebuggable false
+            pseudoLocalesEnabled false
+            debuggable false
+            jniDebuggable false
+            zipAlignEnabled true
+        }
+        qa {
+            signingConfig signingConfigs.debug
+            debuggable true
+            jniDebuggable false
+            renderscriptDebuggable false
+            minifyEnabled false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
+        }
+        dev {
+            signingConfig signingConfigs.debug
+            debuggable true
+            jniDebuggable false
+            renderscriptDebuggable false
+            minifyEnabled false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
+        }
+        online {
+            signingConfig signingConfigs.debug
+            debuggable true
+            jniDebuggable false
+            renderscriptDebuggable false
+            minifyEnabled false
+            pseudoLocalesEnabled false
+            zipAlignEnabled true
+        }
+        release {
+            buildConfigField "int", "ENV", "0"
+            buildConfigField "boolean", "IS_DEBUG", "false"
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.realase
+            renderscriptDebuggable false
+            pseudoLocalesEnabled false
+            debuggable false
+            jniDebuggable false
+            zipAlignEnabled true
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    productFlavors {
+//        _tencent {
+//            manifestPlaceholders = [CHANNEL_VALUE: "tencent"]
+//        }
+//        _huawei {
+//            manifestPlaceholders = [CHANNEL_VALUE: "huawei"]
+//        }
+//        _oppo {
+//            manifestPlaceholders = [CHANNEL_VALUE: "oppo"]
+//        }
+//        _xiaomi {
+//            manifestPlaceholders = [CHANNEL_VALUE: "xiaomi"]
+//        }
+//        _360 {
+//            manifestPlaceholders = [CHANNEL_VALUE: "360"]
+//        }
+//        _wandoujia {
+//            manifestPlaceholders = [CHANNEL_VALUE: "wandoujia"]
+//        }
+//        _lenovo {
+//            manifestPlaceholders = [CHANNEL_VALUE: "lenovo"]
+//        }
+//        _baidu {
+//            manifestPlaceholders = [CHANNEL_VALUE: "baidu"]
+//        }
+//        _91 {
+//            manifestPlaceholders = [CHANNEL_VALUE: "91"]
+//        }
+//        _anzhuo {
+//            manifestPlaceholders = [CHANNEL_VALUE: "anzhuo"]
+//        }
+//        _anzhi {
+//            manifestPlaceholders = [CHANNEL_VALUE: "anzhi"]
+//        }
+//        _sogou {
+//            manifestPlaceholders = [CHANNEL_VALUE: "sogou"]
+//        }
+//        _meizu {
+//            manifestPlaceholders = [CHANNEL_VALUE: "meizu"]
+//        }
+        _focus {
+            manifestPlaceholders = [CHANNEL_VALUE: "focus"]
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+
+            def appName = 'SalesMaster'
+            def version = "_v${variant.versionCode}"
+            def time = "_${releaseTime()}.apk"
+            if (variant.buildType.name.equals('release')) {
+                // 获取渠道号
+                def productFlavor = variant.productFlavors[0].name
+                outputFileName = appName + version + productFlavor + time
+            } else if (variant.buildType.name.equals('dev')) {
+                outputFileName = appName + version + '_dev' + time
+            } else if (variant.buildType.name.equals('qa')) {
+                outputFileName = appName + version + '_qa' + time
+            } else if (variant.buildType.name.equals('online')) {
+                outputFileName = appName + version + '_online' + time
+            } else {
+                outputFileName = appName + version + '_debug' + time
+            }
+        }
+    }
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a' //select ABIs to build APKs for
+            universalApk false
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/maven/com.nineoldandroids/library/pom.xml'
+        exclude 'META-INF/maven/com.nineoldandroids/library/pom.properties'
+    }
+    buildToolsVersion '26.0.2'
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(include: ['*.jar'], dir: 'src/main/jniLibs')
+    /*ui*/
+    compile rootProject.ext.libSupportDesign
+    compile rootProject.ext.libMultiPicSelector
+    compile rootProject.ext.libSupDesign
+    compile rootProject.ext.libSupCardView
+    compile rootProject.ext.libPhotoView
+    compile rootProject.ext.libCircleView
+    compile rootProject.ext.libBadgeView
+    /*butterknife*/
+    compile rootProject.ext.libButterKnife
+    annotationProcessor rootProject.ext.libButterKnifeCompiler
+    /*database*/
+    /*html*/
+    compile rootProject.ext.libJsoup
+    compile rootProject.ext.libAnalytisc
+    /*rtmp*/
+    compile(name: 'LiteAVSDK_Professional', ext: 'aar')
+    /*router*/
+    annotationProcessor rootProject.ext.libRouterCompiler
+
+    //不同环境的kernal
+    implementation project(':lib_kernal')
+}
+
+def releaseTime() {
+    return new Date().format("yyyyMMdd")
+}
+
+def getVersionCode(boolean flag) {
+    // 正式环境
+    if (flag) {
+        versionMajor * 100 + versionMinor * 10 + versionPatch
+    }
+    // debug环境
+    else {
+        versionMajor * 100 + versionMinor * 10 + versionPatch
+//        Integer.parseInt(new Date().format("yyMMddHHmm"))
+    }
+}
+
+//Major_Version_Number.Minor_Version_Number[Revision_Number[.Build_Number]]
+def getVersionName(boolean flag) {
+    // 正式环境
+    if (flag) {
+        "${versionMajor}.${versionMinor}.${versionPatch}"
+    }
+    // debug环境
+    else {
+        String time = new Date().format("MM-dd_HH:mm")
+        versionMajor + "." + versionMinor + "." + versionPatch + "." + revisionNumber + ".$time." + revisionDescription
+    }
+}

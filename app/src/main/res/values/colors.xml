@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#799ff3</color>
+    <color name="colorPrimaryDark">#000000</color>
+
+    <!-- 文字默认 标准颜色-->
+    <color name="standard_text_light_black">#666666</color>
+    <color name="standard_text_black">#333333</color>
+    <color name="standard_text_gray">#999999</color>
+    <color name="standard_text_light_gray">#bbbbbb</color>
+    <color name="standard_text_highlight">@color/colorPrimary</color>
+
+    <!--标准统一颜色-->
+    <color name="transparent">#00000000</color>
+    <color name="standard_line_light">#eeeeee</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="standard_line">#e5e5e5</color>
+    <color name="standard_line_dark">#d8d8d8</color>
+    <color name="standard_red">#ff4d4d</color>
+    <color name="standard_red_alpha30">#40ff4d4d</color>
+    <color name="standard_background_f5">#f5f5f5</color>
+
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+
+    <!--项目定制颜色-->
+    <color name="home_icon_selected">#799FF3</color>
+    <color name="dynamic_build_name">#5B709E</color>
+
+    <color name="line_chart_bg">#AABBFE</color>
+    <color name="line_chart_curve">#66799FF3</color>
+
+    <color name="line_chart_bg_top">#5147BFFE</color>
+    <color name="line_chart_bg_bottom">#18AABBFE</color>
+
+    <color name="text_light_grey_bg">#F8F8F8</color>
+    <color name="text_black_151515">#151515</color>
+
+</resources>

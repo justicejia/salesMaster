@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+        <TextView
+            style="@style/activity_title"
+            android:text="@string/my_sub" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/standard_line_light" />
+    </RelativeLayout>
+
+    <com.sohu.focus.salesmaster.uiframe.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/sub_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_empty="@layout/layout_empty"
+        app:layout_error="@layout/layout_error"/>
+
+</LinearLayout>

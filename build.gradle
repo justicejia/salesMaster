@@ -1,0 +1,113 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://dl.bintray.com/linkedme2016/lkme-deeplinks'
+        }
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.0'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://dl.bintray.com/linkedme2016/lkme-deeplinks'
+        }
+        google()
+    }
+}
+
+def retrofitVersion = "2.3.0"
+def butterKnifeVersion = "8.4.0"
+def supportVersion = "27.0.2"
+def jacksonVersion = "2.8.0"
+def leakCanaryVersion = "1.5.4"
+
+project.ext {
+    applicationId = "com.sohu.focus.salesmaster"
+    buildToolsVersion = "27.0.2"
+    compileSdkVersion = 26
+    minSdkVersion = 18
+    targetSdkVersion = 26
+    //是否显示正规的versionName，eg：true -> 1.5.0, false -> 1.5.0.1209(git提交数).08-04_18:40(打包时间).9ab1f99(git提交版本号).qa(运行环境)
+    //应该在开发和发版的时候设置为true，提测的时候设置为false，方便测试定位到测试的包信息
+    showRealVersionName = true
+
+    abortOnLintError = false
+    checkLintRelease = true
+
+    /*ui*/
+    libSupportDesign = "com.android.support:design:${supportVersion}"
+    libSupDesign = "com.android.support:design:${supportVersion}"
+    libSupRecyclerView = "com.android.support:recyclerview-v7:${supportVersion}"
+    libSupCardView = "com.android.support:cardview-v7:${supportVersion}"
+    libPhotoView = "com.github.chrisbanes.photoview:library:1.2.4"
+    libCircleView = 'de.hdodenhof:circleimageview:2.1.0'
+    libBadgeView = 'q.rorbin:badgeview:1.1.2'
+    /*imageloader*/
+    libGlide = 'com.github.bumptech.glide:glide:3.8.0'
+    libGlideIntegration = 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+    /*database*/
+
+    /*rx*/
+    libRxAndroid = 'io.reactivex:rxandroid:1.2.1'
+    libRxJava = 'io.reactivex:rxjava:1.1.6'
+    /*rotrofit*/
+    libRetrofit = "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    libRetrofitRxAdapter = "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}"
+    libOkHttpLog = 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+
+    /*deeplink*/
+    libDeeplink = "cc.linkedme.deeplinks:link-page:1.0.13"
+    /*router*/
+    libRouter = "com.alibaba:arouter-api:1.2.2"
+    libRouterCompiler = "com.alibaba:arouter-compiler:1.1.3"
+    /*butterknife*/
+    libButterKnife = "com.jakewharton:butterknife:${butterKnifeVersion}"
+    libButterKnifeCompiler = "com.jakewharton:butterknife-compiler:${butterKnifeVersion}"
+    /*memory*/
+    debugDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"
+    ]
+    devDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
+    ]
+    qaDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
+    ]
+    onlineDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}"
+    ]
+    releaseDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}"
+    ]
+
+    /*json*/
+    libJacksonAnno = "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    libJacksonCore = "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    libJacksonDataBind = "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    /*html*/
+    libJsoup = 'org.jsoup:jsoup:1.9.2'
+    /*multidex*/
+    libMultidex = 'com.android.support:multidex:1.0.1'
+    libAnalytisc = 'com.umeng.analytics:analytics:latest.integration'
+    /*log*/
+    libXLog = 'com.tencent.mars:mars-xlog:1.0.3'
+    /*图片选择器*/
+    libMultiPicSelector = 'com.zfdang.multiple-images-selector:multiple-images-selector:1.1.3'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

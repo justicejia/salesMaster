@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:id="@+id/add_competitor_back"
+            android:layout_width="16dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:src="@drawable/ico_arrow_left_blue" />
+
+        <TextView
+            style="@style/activity_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"
+            android:text="添加竞品" />
+
+        <TextView
+            android:id="@+id/add_competitor_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:text="确定"
+            android:textColor="@color/standard_text_light_gray"
+            android:textSize="14sp" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/add_competitor_back"
+            android:layout_marginTop="5dp"
+            android:background="#EEEEEE" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:text="竞品公司"
+            android:textColor="@color/standard_text_gray"
+
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/add_competitor_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/divider1"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@null"
+            android:hint="请输入公司名"
+            android:gravity="right"
+            android:maxLines="1"
+            android:textColor="@color/standard_text_black"
+            android:textColorHint="@color/standard_text_light_gray"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@id/add_competitor_company"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:background="#EEEEEE" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/divider2"
+            android:layout_marginLeft="15dp"
+            android:text="投放金额"
+            android:textColor="@color/standard_text_gray"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/add_competitor_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/divider2"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:gravity="right"
+            android:hint="请输入竞品投放金额"
+            android:maxLines="1"
+            android:textColor="@color/standard_text_black"
+            android:textColorHint="@color/standard_text_light_gray"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</LinearLayout>

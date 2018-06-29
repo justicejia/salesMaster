@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_middle_xxxxx">20dp</dimen>
+    <dimen name="margin_middle_x">16dp</dimen>
+    <dimen name="margin_medium_xxxxx">15dp</dimen>
+    <dimen name="margin_medium_xx">12dp</dimen>
+    <dimen name="margin_medium_x">11dp</dimen>
+    <dimen name="margin_small_xxxxx">10dp</dimen>
+    <dimen name="margin_little_x">1dp</dimen>
+    <dimen name="margin_half">0.5dp</dimen>
+
+    <dimen name="text_middle_xxxxx">20sp</dimen>
+    <dimen name="text_middle_xxx">18sp</dimen>
+    <dimen name="text_middle_x">16sp</dimen>
+    <dimen name="text_medium_xxxx">14sp</dimen>
+    <dimen name="text_medium_xx">12sp</dimen>
+
+    <!--页面布局左右边距-->
+    <dimen name="standard_layout_margin_horizontal">15dp</dimen>
+    <dimen name="standard_layout_margin_vertical">20dp</dimen>
+    <!--统一的分割线高度-->
+    <dimen name="standard_line_height">0.5dp</dimen>
+</resources>

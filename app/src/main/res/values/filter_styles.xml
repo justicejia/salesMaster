@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><!--通用筛选项默认 style-->
+<resources>
+
+    <style name="filter_wrapper_style">
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:layout_marginLeft">6dp</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/filter_bg</item>
+    </style>
+
+    <style name="filter_textView_defaultStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:drawableRight">@drawable/filter_arrow_down</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:maxEms">6</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/standard_text_gray</item>
+    </style>
+</resources>

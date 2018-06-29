@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/competitor_back"
+        android:layout_width="16dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:src="@drawable/ico_arrow_left_blue" />
+
+    <TextView
+        style="@style/activity_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:text="竞品投放" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@id/competitor_back"
+        android:layout_marginTop="10dp"
+        android:background="#EEEEEE" />
+
+    <com.sohu.focus.salesmaster.uiframe.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/competitor_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/divider" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="#EEEEEE" />
+
+    <TextView
+        android:id="@+id/competitor_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:drawableLeft="@drawable/add_client"
+        android:drawablePadding="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:text="添加竞品" />
+
+</RelativeLayout>

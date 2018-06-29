@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/standard_layout_margin_vertical" />
+
+
+    <!--<ProgressBar-->
+    <!--style="@style/mProgress_circle"-->
+    <!--android:layout_width="18dp"-->
+    <!--android:layout_height="18dp"-->
+    <!--android:indeterminate="false"-->
+    <!--android:indeterminateDuration="1200" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="没有更早的消息了"
+        android:textColor="@color/standard_text_gray"
+        android:textSize="@dimen/text_medium_xx" />
+
+    <android.support.v4.widget.Space
+        android:layout_width="0dp"
+        android:layout_height="@dimen/standard_layout_margin_vertical" />
+
+    <View style="@style/standard_line" />
+
+</LinearLayout>

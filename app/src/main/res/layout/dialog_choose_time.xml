@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:id="@+id/choose_time_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"
+            android:text="取消"
+            android:padding="5dp"
+            android:textColor="@color/standard_text_light_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/choose_time_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="确认"
+            android:padding="5dp"
+            android:textColor="@color/home_icon_selected"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/standard_line_light" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:orientation="horizontal">
+        <com.sohu.focus.salesmaster.uiframe.SimpleWheelView
+            android:id="@+id/wheelView_year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:itemNumber="5"
+            app:lineColor="@color/standard_text_light_gray"
+            app:lineHeight="0.5dp"
+            app:maskDarkColor="#00000000"
+            app:maskLightColor="#00000000"
+            app:noEmpty="true"
+            app:normalTextColor="@color/standard_text_light_gray"
+            app:normalTextSize="14sp"
+            app:selectedTextColor="@color/standard_text_black"
+            app:selectedTextSize="14sp"
+            app:unitHeight="40dp" />
+
+        <com.sohu.focus.salesmaster.uiframe.SimpleWheelView
+            android:id="@+id/wheelView_month"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:itemNumber="5"
+            app:lineColor="@color/standard_text_light_gray"
+            app:lineHeight="0.5dp"
+            app:maskDarkColor="#00000000"
+            app:maskLightColor="#00000000"
+            app:noEmpty="true"
+            app:normalTextColor="@color/standard_text_light_gray"
+            app:normalTextSize="14sp"
+            app:selectedTextColor="@color/standard_text_black"
+            app:selectedTextSize="14sp"
+            app:unitHeight="40dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

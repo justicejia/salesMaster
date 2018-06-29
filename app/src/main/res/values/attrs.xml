@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EasyRecyclerView">
+        <attr name="layout_empty" format="reference" />
+        <attr name="layout_progress" format="reference" />
+        <attr name="layout_error" format="reference" />
+        <attr name="recyclerClipToPadding" format="boolean" />
+        <attr name="recyclerPadding" format="dimension" />
+        <attr name="recyclerPaddingTop" format="dimension" />
+        <attr name="recyclerPaddingBottom" format="dimension" />
+        <attr name="recyclerPaddingLeft" format="dimension" />
+        <attr name="recyclerPaddingRight" format="dimension" />
+        <attr name="scrollbarStyle">
+            <enum name="insideOverlay" value="0x0" />
+            <enum name="insideInset" value="0x01000000" />
+            <enum name="outsideOverlay" value="0x02000000" />
+            <enum name="outsideInset" value="0x03000000" />
+        </attr>
+        <attr name="scrollbars">
+            <enum name="vertical" value="1" />
+            <enum name="horizontal" value="0" />
+            <enum name="none" value="2" />
+        </attr>
+        <attr name="overScrollMode">
+            <enum name="never" value="1" />
+            <enum name="always" value="0" />
+            <enum name="ifContentScrolls" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsTabMarginLeft" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsShouldExpand" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+    </declare-styleable>
+
+    <!-- 带圆点指示器的ViewPager -->
+    <declare-styleable name="ViewPagerIndicator">
+        <!-- Style of the circle indicator. -->
+        <attr name="vpiCirclePageIndicatorStyle" format="reference" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SwitchView">
+        <attr name="hasShadow" format="boolean" />
+        <attr name="primaryColor" format="color" />
+        <attr name="primaryColorDark" format="color" />
+        <attr name="isOpened" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FlowLayout">
+        <attr name="flow" format="boolean" />
+        <attr name="childSpacing" format="enum|dimension">
+            <enum name="auto" value="-65536" />
+        </attr>
+        <attr name="childSpacingForLastRow" format="enum|dimension">
+            <enum name="auto" value="-65536" />
+            <enum name="align" value="-65537" />
+        </attr>
+        <attr name="rowSpacing" format="enum|dimension">
+            <enum name="auto" value="-65536" />
+        </attr>
+        <attr name="rtl" format="boolean" />
+        <attr name="maxRow" format="integer" />
+        <attr name="centerVertical" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RealtimeBlurView">
+        <attr name="realtimeBlurRadius" format="dimension" />
+        <attr name="realtimeDownsampleFactor" format="float" />
+        <attr name="realtimeOverlayColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="Switch">
+        <attr name="highlight_color" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="textSize" format="dimension" />
+        <attr name="padding" format="dimension" />
+        <attr name="round" format="dimension" />
+        <attr name="leftText" format="string" />
+        <attr name="rightText" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="WheelView">
+        <attr name="itemVisibleNum" format="integer" />
+
+        <attr name="textColorOuter" format="color" />
+        <attr name="textSizeOuter" format="dimension" />
+        <attr name="textColorCenter" format="color" />
+        <attr name="textSizeCenter" format="dimension" />
+
+        <attr name="dividerColor" format="color" />
+
+        <attr name="isLoop" format="boolean" />
+        <attr name="lineSpaceingDimens" format="dimension" />
+
+        <attr name="wheelGravity" format="enum">
+            <enum name="left" value="234" />
+            <enum name="center" value="354" />
+            <enum name="right" value="894" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SimpleWheelView">
+        <attr name="unitHeight" format="dimension" />
+        <attr name="itemNumber" format="integer"/>
+
+        <attr name="normalTextColor" format="color" />
+        <attr name="normalTextSize" format="dimension" />
+        <attr name="selectedTextColor" format="color" />
+        <attr name="selectedTextSize" format="dimension" />
+        <attr name="isCyclic" format="boolean" />
+
+        <attr name="lineColor" format="color" />
+        <attr name="lineHeight" format="dimension" />
+
+        <attr name="noEmpty" format="boolean"/>
+        <attr name="isEnable" format="boolean"/>
+
+        <attr name="maskDarkColor" format="color" />
+        <attr name="maskLightColor" format="color" />
+    </declare-styleable>
+</resources>

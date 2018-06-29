@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/select_img_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_reporting_head"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="@dimen/margin_small_xxxxx"
+        android:text="@string/take_photo"
+        android:textColor="@drawable/reporting_text_color_selector"
+        android:textSize="@dimen/text_middle_xxxxx" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/standard_line_light" />
+
+    <TextView
+        android:id="@+id/select_img_album"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_reporting_footer"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="@dimen/margin_small_xxxxx"
+        android:text="@string/album"
+        android:textColor="@drawable/reporting_text_color_selector"
+        android:textSize="@dimen/text_middle_xxxxx" />
+
+    <Button
+        android:id="@+id/select_img_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_reporting_buttom"
+        android:gravity="center"
+        android:padding="@dimen/margin_small_xxxxx"
+        android:text="@string/cancel"
+        android:textColor="@drawable/reporting_text_color_selector"
+        android:textSize="@dimen/text_middle_xxxxx" />
+
+</LinearLayout>
